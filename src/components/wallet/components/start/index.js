@@ -48,7 +48,7 @@ const Start = ({ setPublicKey, setSecret, setKeyCopied }) => {
     } else {
       toast({
         title: "Error",
-        description: "Asegúrate de que tu secret key es correcta",
+        description: "Make sure your secret key is correct.",
         status: "error",
         duration: 9000,
         isClosable: true
@@ -58,23 +58,23 @@ const Start = ({ setPublicKey, setSecret, setKeyCopied }) => {
 
   return (
     <>
-      <Heading>Bienvenido a tu wallet de Stellar</Heading>
+      <Heading>Welcome to your Stellar wallet</Heading>
       <Text fontSize="xl">
-        Crea tu cuenta de stellar de forma rápida y sencilla
+        Create your stellar account quickly and easily
       </Text>
       <Button onClick={createAccount} size="lg" variantColor="blue" mt="24px">
-        Crear cuenta
+        Create Account
       </Button>
-      <Text mt={10}>O importa tu cuenta con tu secret</Text>
+      <Text mt={10}>Or import your account with your secret</Text>
       <InputGroup>
         <Input
           onChange={({ target: { value } }) => setSecretToImport(value)}
           value={secretToImport}
-          placeholder="Cuenta a checar"
+          placeholder="Account to check"
           roundRight="0"
         />
         <Button onClick={importAccount} variantColor="green">
-          Importar
+          Import
         </Button>
       </InputGroup>
     </>

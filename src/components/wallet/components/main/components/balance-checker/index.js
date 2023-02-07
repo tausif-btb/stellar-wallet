@@ -25,25 +25,25 @@ const BalanceChecker = () => {
     <>
       <Divider my={10} />
       <Text textAlign="center" fontSize="xl">
-        Checador de balances
+        Balance checker
       </Text>
       <InputGroup mt={2}>
         <Input
           onChange={({ target: { value } }) => setAccountToCheck(value)}
           value={accountToCheck}
-          placeholder="Cuenta a checar"
+          placeholder="Account to check"
           roundRight="0"
         />
         <Button onClick={checkBalance} variantColor="green">
-          Checar balance
+          Check balance
         </Button>
       </InputGroup>
       {checkedAccount?.balances.map(({ balance, asset_type }, index) => (
         <InputGroup mt={2} key={index}>
-          <InputLeftAddon>Número: {index}</InputLeftAddon>
+          <InputLeftAddon>Number: {index}</InputLeftAddon>
           <Input roundedLeft="0" roundRight="0" readOnly value={balance} />
           <InputRightAddon>XLM</InputRightAddon>
-          <InputRightAddon>Tipo: {asset_type}</InputRightAddon>
+          <InputRightAddon>Type: {asset_type}</InputRightAddon>
         </InputGroup>
       ))}
     </>

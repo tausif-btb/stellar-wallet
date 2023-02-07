@@ -18,25 +18,25 @@ const AccountData = ({ publicKey, account }) => {
   return (
     <>
       <Text textAlign="center" fontSize="xl">
-        Llave pública
+        Public key
       </Text>
       <InputGroup mt={2}>
         <Input readOnly pr="4.5rem" value={publicKey} />
         <InputRightElement width="4.5rem">
           <Button h="1.75rem" size="sm" onClick={onCopy}>
-            {hasCopied ? "Copiado" : "Copiar"}
+            {hasCopied ? "Copied" : "Copy"}
           </Button>
         </InputRightElement>
       </InputGroup>
       <Text mt={10} textAlign="center" fontSize="xl">
-        Balance de la cuenta
+        Account balance
       </Text>
       {account?.balances.map(({ balance, asset_type }, index) => (
         <InputGroup mt={2} key={index}>
-          <InputLeftAddon>Número: {index}</InputLeftAddon>
+          <InputLeftAddon>Number: {index}</InputLeftAddon>
           <Input roundedLeft="0" roundRight="0" readOnly value={balance} />
           <InputRightAddon>XLM</InputRightAddon>
-          <InputRightAddon>Tipo: {asset_type}</InputRightAddon>
+          <InputRightAddon>Type: {asset_type}</InputRightAddon>
         </InputGroup>
       ))}
     </>

@@ -39,10 +39,10 @@ const Main = ({ publicKey, secret, resetAccount }) => {
         <Divider my={10} />
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Text textAlign="center" fontSize="xl">
-            Cuenta
+            Account
           </Text>
           <Button onClick={resetAccount} variant="outline" variantColor="red">
-            Cerrar cuenta
+            Close
           </Button>
         </Box>
       </Stack>

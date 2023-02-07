@@ -36,8 +36,8 @@ const SendTransaction = ({ secret, updateAccount }) => {
           amount.toString()
         );
         toast({
-          title: `Se han enviado ${amount} XLM`,
-          description: `Hash de la transacción: ${result.hash}`,
+          title: `They have been sent ${amount} XLM`,
+          description: `Transaction hash: ${result.hash}`,
           status: "success",
           duration: 9000,
           isClosable: true
@@ -47,7 +47,7 @@ const SendTransaction = ({ secret, updateAccount }) => {
       } catch (err) {
         // Si hay un error, lo mostraremos
         toast({
-          title: "Ha ocurrido un error",
+          title: "An error has occurred",
           description: err.message,
           status: "error",
           duration: 9000,
@@ -57,9 +57,9 @@ const SendTransaction = ({ secret, updateAccount }) => {
     } else {
       // Si la cuenta es inválida o se intenta mandar menos de 0, hay que notificar
       toast({
-        title: `Datos inválidos`,
+        title: `Invalid data`,
         description:
-          "Asegúrate de colocar una dirección correcta y enviar una cantidad válida",
+          "Make sure you put a correct address and send a valid amount",
         status: "error",
         duration: 9000,
         isClosable: true
@@ -71,7 +71,7 @@ const SendTransaction = ({ secret, updateAccount }) => {
     <>
       <Divider my={10} />
       <Text textAlign="center" fontSize="xl">
-        Enviar XLM
+        Send XLM
       </Text>
       <NumberInput
         step="0.001"
@@ -90,12 +90,12 @@ const SendTransaction = ({ secret, updateAccount }) => {
         <Input
           onChange={({ target: { value } }) => setDestination(value)}
           value={destination}
-          placeholder="Destinatario"
+          placeholder="Recipient"
           roundRight="0"
         />
       </InputGroup>
       <Button mt={2} onClick={sendXLM} variantColor="blue">
-        Enviar
+        To send
       </Button>
     </>
   );

@@ -29,8 +29,8 @@ const CopyKey = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
     const { hash } = await activeTestAccount(publicKey);
     // Notificamos al usuario
     toast({
-      title: "Cuenta creada y fondeada",
-      description: `Hash de la transacción: ${hash}`,
+      title: "Account created and funded",
+      description: `Transaction Hash: ${hash}`,
       status: "success",
       duration: 9000,
       isClosable: true
@@ -45,22 +45,21 @@ const CopyKey = ({ publicKey, secret, setKeyCopied, resetAccount }) => {
         <Alert status="error">
           <AlertIcon />
           <Text>
-            Antes de continuar, guarda tu secret en un lugar privado, de lo
-            contrario, no podrás volver a tu cuenta
+            Before you continue, save your secret in a private place, otherwise you won't be able to return to your account
           </Text>
         </Alert>
         <InputGroup>
           <Input readOnly pr="4.5rem" value={secret} />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={onCopy}>
-              {hasCopied ? "Copiado" : "Copiar"}
+              {hasCopied ? "Copied" : "Copy"}
             </Button>
           </InputRightElement>
         </InputGroup>
         <Box display="flex" justifyContent="space-between">
-          <Button onClick={resetAccount}>Regresar</Button>
+          <Button onClick={resetAccount}>Go Back</Button>
           <Button onClick={handleCopied} variantColor="blue">
-            Copiado
+            Activate Account
           </Button>
         </Box>
       </Stack>
